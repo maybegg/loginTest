@@ -8,11 +8,6 @@ var express = require('express'),
 app.set('view engine','ejs');
 app.set('views',path.resolve('views'));
 app.use(bodyParser.urlencoded({extended:true}));
-app.use('/node_modules/bootstrap/dist/css/bootstrap.css',function (req, res, next) {
-    console.log(path.resolve('./public/css/bootstrap.css'))
-   res.sendFile(path.resolve('./public/css/bootstrap.css'));
-    next();
-});
 //注册
 app.get('/signup',function (req, res) {
     //res.sendFile(path.resolve('./views/signup.ejs'));
